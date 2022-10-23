@@ -1,60 +1,62 @@
-import React, { useState,useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { data } from '../data/data.js';
 import { useTranslation } from 'react-i18next';
 
- //   Filter Type burgers/pizza/etc
+
+const FoodCards = ({ category, search }) => {
 
 
-const FoodCards = ({category,search}) => {
-  //   console.log(data);
   const [foods, setFoods] = useState(data);
 
-  const filterType = () => {
+  useEffect(() => {
 
-
-    setFoods(
-      data.filter((item) => {
-        if(category === "" && search === "" || category === "all" ){
+    const filterType = () => {
+      setFoods(
+        data.filter((item) => {
+          if ((category === "" && search) === "" || category === "all") {
             return item.category;
-        }else if(category !== ""){
-          return item.category === category && item.name.toLowerCase().includes(search.toLowerCase());
-        }
-        return item.category === category || item.name.toLowerCase().includes(search.toLowerCase());
-      })
-    );
-  };
 
-  useEffect(()=>{
+          } else if (category !== "") {
+
+            return item.category === category && item.name.toLowerCase().includes(search.toLowerCase());
+
+          }
+          return item.category === category || item.name.toLowerCase().includes(search.toLowerCase());
+        })
+      );
+    };
+
     filterType();
-  },[category,search]);
-  
+
+
+  }, [category, search]);
+
 
   //   Filter by price
-  const filterPrice = (price) => {
-    setFoods(
-      data.filter((item) => {
-        return item.price === price;
-      })
-    );
-  };
+  // const filterPrice = (price) => {
+  //   setFoods(
+  //     data.filter((item) => {
+  //       return item.price === price;
+  //     })
+  //   );
+  // };
 
-//   Translate
-const [t] = useTranslation();
+  //   Translate
+  const [t] = useTranslation();
 
   return (
-    <div className='max-w-[1640px] m-auto  px-4 py-10'>
+    <div className='max-w-[1640px] m-auto  px-4 mb-10'>
       <h1 className='text-orange-600 font-bold mb-5 text-4xl text-center'>
-         {category === "" ? t('titleSection') : t(category)}
-          
+        {category === "" ? t('titleSection') : t(category)}
       </h1>
 
       <h2 className='text-xl '> {
-            foods.length === 0 ? (<span>{t("empty")}</span>) :""
-         }</h2>
+        foods.length === 0 ? (<span>{t("empty")}</span>) : ""
+      }</h2>
 
       {/* Filter Row */}
       <div className='flex flex-col lg:flex-row justify-between'>
-      {/*
+        {/*
         
         <div>
           <p className='font-bold text-gray-700'>Filter Type</p>
@@ -122,7 +124,7 @@ const [t] = useTranslation();
             </button>
           </div> */}
         {/* </div> */}
-      </div> 
+      </div>
 
       {/* Display foods */}
       <div className='grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4'>

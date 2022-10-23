@@ -7,9 +7,9 @@ import { MdLanguage } from 'react-icons/md';
 function DropLanguage() {
 
     // Translate
-    const [t, i18n] = useTranslation();
+    const {i18n} = useTranslation();
 
-    const [menu, setMenu] = useState(false);
+    const [setMenu] = useState(false);
 
 
     // Avaible Lang choose
@@ -49,21 +49,20 @@ function DropLanguage() {
                 <MdLanguage className='inline-block items-center text-xl' />
                 <span className='ltr:ml-3 rtl:mr-3'>{selectedLang.title}</span>
                 <RiArrowDropDownLine className='inline-block text-xl' />
-
             </Listbox.Button>
-            <Listbox.Options className={`absolute bg-[#F4F2FF]  focus:outline-[#F86615] shadow-lg z-10`}>
+            <Listbox.Options className={`absolute bg-[#F4F2FF] focus:outline-[#F86615] shadow-lg z-10`}>
                 {
                     languages.map((language) => (
-                        <Listbox.Option value={language} className="text-gray-900 px-10 py-3 hover:bg-gray-900 hover:text-white truncate" key={language.lang} as={"div"}>
+                        <Listbox.Option value={language} className="p-0 m-0 " onClick={() => {
+                            setPageDirection(language.lang);
+                            setMenu(false)
+                        }}
+                         key={language.lang} as={"div"}>
                             {({ active }) => (
-                                <button onClick={() => {
-                                    setPageDirection(language.lang);
-                                    setMenu(false)
-                                }}
-                                    className={`truncate relative uppercase ${active ? "bg-gray-900 text-white" : " text-gray-900"}`}>
+                                <button 
+                                    className={`truncate relative uppercase w-full px-10 py-3 ${active ? "bg-gray-900  text-white" : " text-gray-900"}`}>
                                     {language.flag} {language.title} - {language.currency}</button>
                             )}
-
                         </Listbox.Option>
                     ))
                 }

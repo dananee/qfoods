@@ -10,9 +10,9 @@ function MainSection() {
   const [search,setSearch] = useState("");
 
   return (
-    <main >
+    <main>
       <SliderCategory categoryChange={(category)=> setCategory(category)}/>
-      <SearchBar   searchChanges={(search) => setSearch(search)} />
+      <SearchBar searchChanges={(search) => setSearch(search)} />
       <FoodCards category={category} search={search}/>
     </main>
   )
