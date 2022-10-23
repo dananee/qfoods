@@ -1,0 +1,44 @@
+{
+  "home": "Accueil",
+  "category": "Catégories",
+  "promo": "Remise",
+  "search": "Recherche",
+  "order": "Panier",
+  "welcome": "Bienvenue chez",
+  "location": "localisation",
+  "open": "Ouverte",
+  "close": "Fermer",
+  "days": {
+    "sun": "Dimache",
+    "mon": "Lundi",
+    "tue": "Mardi",
+    "wed": "Mercredi",
+    "thu": "Jeudi",
+    "fri": "Vendredi",
+    "sat": "Samedi"
+  },
+  "basket": "Panier",
+  "fav": "Favori",
+  "feedback": "Note",
+
+  "tacos": "Tacos",
+  "burger": "Burger",
+  "sandwich": "Sandwich",
+  "drinks": "Boissons",
+  "icecream": "La Glace",
+  "shawarma": "Shawarma",
+  "dessert": "Dessert",
+  "barbecue":"Barbecue",
+  "cupcake":"Cupcake",
+  "sushi":"Sushi",
+  "diet":"Régime",
+  "salad":"Salad",
+  "pizza":"Pizza",
+  "vegetable":"Vegetable",
+  "freelactoz":"Sans Lactose",
+  "all":"Tous",
+
+  "empty":"Indisponible !!",
+  "titleSection" : "Éléments de menu les mieux notés"
+
+}

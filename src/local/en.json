@@ -1,0 +1,48 @@
+{
+  "home": "Home",
+  "category": "Categories",
+  "promo": "Offers",
+  "search": "Search",
+  "order": "Orders",
+  "welcome": "Welcome to",
+  "location": "Location",
+  "open": "Open",
+  "close": "Close",
+  "days": {
+    "sun": "Sunday", 
+    "mon": "Monday", 
+    "tue": "Tuesday", 
+    "wed": "Wednesday", 
+    "thu": "Thursday", 
+    "fri": "Friday", 
+    "sat": "Saturday"
+  },
+  
+  
+  "basket":"Basket",
+  "fav":"Favorite",
+  "feedback":"Feedback",
+  
+  
+  "tacos":"Tacos",
+  "burger":"Burger",
+  "sandwich":"Sandwich",
+  "drinks":"Drinks",
+  "icecream":"Icecream",
+  "shawarma":"Shawarma",
+  "dessert":"Desserts",
+  "barbecue":"Barbecue",
+  "cupcake":"Cupcake",
+  "sushi":"Sushi",
+  "diet":"Diet",
+  "salad":"Salad",
+  "pizza":"Pizza",
+  "vegetable":"Vegetable",
+  "freelactoz":"Free Lactose",
+  "all":"All",
+  "empty":"Not avaible!!",
+
+  "titleSection" : "Top Rated Menu Items"
+
+    
+}
