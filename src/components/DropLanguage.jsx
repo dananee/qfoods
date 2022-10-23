@@ -54,13 +54,13 @@ function DropLanguage() {
             <Listbox.Options className={`absolute bg-[#F4F2FF]  focus:outline-[#F86615] shadow-lg z-10`}>
                 {
                     languages.map((language) => (
-                        <Listbox.Option value={language} key={language.lang} as={"div"}>
+                        <Listbox.Option value={language} className="text-gray-900 px-10 py-3 hover:bg-gray-900 hover:text-white truncate" key={language.lang} as={"div"}>
                             {({ active }) => (
                                 <button onClick={() => {
                                     setPageDirection(language.lang);
                                     setMenu(false)
                                 }}
-                                    className={`truncate relative uppercase sm:py-1 sm:pl-3 md:py-2 md:pl-5 sm:pr-1 md:ltr:pr-2 py-4 ltr:pl-10 rtl:pl-4 ltr:pr-4  ${active ? "bg-gray-900 text-white" : " text-gray-900"}`}>
+                                    className={`truncate relative uppercase ${active ? "bg-gray-900 text-white" : " text-gray-900"}`}>
                                     {language.flag} {language.title} - {language.currency}</button>
                             )}
 
