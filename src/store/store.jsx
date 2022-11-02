@@ -6,7 +6,6 @@ export const useStoreCard = create(set => ({
     addToCard: (product) => set(state => {
         const isPresent = state.cartItems.find(x => x.id === product.id);
          
-
         if (isPresent) {
             return {
                 ...state,
@@ -41,5 +40,17 @@ export const useStoreCard = create(set => ({
 
         }
 
+    }),
+    removeMeal: (product)=> set(state=>{
+        const exist = state.cartItems.find((x) => x.id === product.id);
+
+        if(exist){
+            return {
+                ...state,
+                cartItems: state.cartItems.filter((x) => x.id !== product.id)
+            }
+        }
+
     })
+    
 }))

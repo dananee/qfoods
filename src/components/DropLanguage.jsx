@@ -9,7 +9,7 @@ function DropLanguage() {
     // Translate
     const { i18n } = useTranslation();
 
-    const [menu, setMenu] = useState(false);
+     
 
     // Avaible Lang choose
     const languages = [{
@@ -42,7 +42,8 @@ function DropLanguage() {
      
     return (
         <Listbox value={selectedLang} onChange={setSelectedLang} as="div" className="cursor-pointer relative border 
-                         inline-block bg-transparent hover:bg-gray-900 hover:text-white ltr:mr-3 rtl:ml-3 rtl:md:ml-10 rounded-lg ltr:md:mr-10">
+                         inline-block bg-transparent hover:bg-gray-900 hover:text-white ltr:mr-3
+                          rtl:ml-3 rtl:md:ml-10 rounded-lg ltr:md:mr-10">
 
             <Listbox.Button className="py-3 px-5 text-[16px] flex flex-row items-center truncate cursor-pointer">
                 <MdLanguage className='inline-block items-center text-xl' />
@@ -54,7 +55,7 @@ function DropLanguage() {
                     languages.map((language) => (
                         <Listbox.Option value={language} className="p-0 m-0 " onClick={() => {
                             setPageDirection(language.lang);
-                            setMenu(false)
+                            
                         }}
                             key={language.lang} as={"div"}>
                             {({ active }) => (

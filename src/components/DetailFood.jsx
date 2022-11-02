@@ -48,7 +48,7 @@ function DetailFood() {
       <Navbar />
       <div className='flex flex-col md:flex-row md:mt-10' id="content">
         
-          <img className='bg-contain bg-center md:m-10 w-full md:w-[700px] md:h-[500px]' src={state.meal.image} alt={state.meal.name} />
+          <img className='bg-contain bg-center md:m-10 w-full md:w-[700px] md:h-auto' src={state.meal.image} alt={state.meal.name} />
         
         <br></br>
         <div className='md:m-10 mx-5 mb-5' >

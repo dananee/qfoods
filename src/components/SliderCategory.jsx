@@ -49,7 +49,6 @@ function SliderCategory({ categoryChange }) {
               categoryChange(name.title);
             }}
             >
-
               <input className="sr-only peer" type="radio" value={name.title} name="category" id={`category_${index}`} 
               onChange={handleChange} checked={select === name.title}  />
               <label className="flex flex-col items-center mx-2 p-5  bg-white border border-gray-300 rounded-lg cursor-pointer
