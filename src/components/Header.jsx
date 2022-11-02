@@ -37,7 +37,7 @@ function Header({cartItems}) {
               <p className='ltr:md:ml-5 rtl:md:text-2xl ltr:ml-2 rtl:md:mr-5 rtl:mr-2'>8:00h - 22:00h </p>
             </div>
           </div>
-          <img className='w-full max-h-[500px] object-cover' src="/resto-img/rest.jpg" alt="restaurant front side" />
+          <img className='w-full max-h-[500px] object-cover' src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="restaurant front side" />
         </div>
       </div>
     </header>
