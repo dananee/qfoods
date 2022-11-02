@@ -12,7 +12,12 @@ function SliderCategory({ categoryChange }) {
   const [t] = useTranslation();
 
   // Select Hover
-  const {setSelecte} = useState([false]);
+  const [select, setSelected] = useState("all");
+
+  const handleChange = event => {
+    
+    setSelected(event.target.value);
+  };
 
 
   const data = [
@@ -35,22 +40,31 @@ function SliderCategory({ categoryChange }) {
 
 
   return (
-    <>
+    <section >
       <h3 className='font-bold text-xl text-gray-900 rtl:text-2xl my-3 mx-5'>{t('category')}</h3>
-      <div className='flex items-center justify-content md:ltr:pl-5 md:rtl:pr-5 relative md:my-0 my-10 overflow-y-auto'>
+      <ul className='flex items-center justify-content md:ltr:pl-5 md:rtl:pr-5 relative md:my-0 my-10 overflow-y-auto'>
         {
           data.map((name, index) => (
-            <button key={index} type='submit' onClick={() => {
+            <li key={index} className="relative " onClick={() => {
               categoryChange(name.title);
-              name.title === "sushi" ? setSelecte(name.active = true) : setSelecte(false);
-            }} className={`flex flex-col px-4 bg-gray-200 rounded-lg  mx-2 hover:bg-[#f88f33] ${data[index].active ? "bg-[#f88f33]" : ""} py-3 items-center  justify-content`}>
-              {name.icon}
-              <span className='pt-2 truncate'>{t(name.title)}</span>
-            </button>
+            }}
+            >
+
+              <input className="sr-only peer" type="radio" value={name.title} name="category" id={`category_${index}`} 
+              onChange={handleChange} checked={select === name.title}  />
+              <label className="flex flex-col items-center mx-2 p-5  bg-white border border-gray-300 rounded-lg cursor-pointer
+                 focus:outline-none hover:bg-gray-50 peer-checked:bg-[#F86615] peer-checked:text-white
+                 peer-checked:font-bold
+                  peer-checked:border-transparent" htmlFor={`category_${index}`}>
+                {name.icon}
+                <span className='mt-2 truncate'>{t(name.title)}</span>
+              </label>
+
+            </li>
           ))
         }
-      </div>
-    </>
+      </ul>
+    </section>
   )
 }
 

@@ -6,7 +6,7 @@ import Navbar from "./Navbar";
 import { restaurantInfos } from '../data/data';
 import colors from '../constants/colors';
 
-function Header() {
+function Header({cartItems}) {
 
   // Translate
   const [t, I18n] = useTranslation();
@@ -18,8 +18,8 @@ function Header() {
   const status = data.status === "true" ? t('open') : t('close');
 
   return (
-    <header>
-      <Navbar />
+    <header >
+      <Navbar cartItems={cartItems} />
       <div className='w-full mx-auto lg:p-4 lg:my-10'>
         <div className='max-h-[500px] relative'>
           {/* Overlay */}

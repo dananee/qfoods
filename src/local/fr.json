@@ -8,6 +8,8 @@
   "location": "localisation",
   "open": "Ouverte",
   "close": "Fermer",
+  "reviews":"Revue",
+  "add":"Ajouter au panier",
   "days": {
     "sun": "Dimache",
     "mon": "Lundi",
@@ -20,7 +22,7 @@
   "basket": "Panier",
   "fav": "Favori",
   "feedback": "Note",
-
+  "cart":"Chariot",
   "tacos": "Tacos",
   "burger": "Burger",
   "sandwich": "Sandwich",

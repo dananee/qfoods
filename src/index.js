@@ -2,20 +2,22 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
-import i18n from  './services/i8n';
+import './services/i8n';
+import { BrowserRouter as Router } from "react-router-dom"
 
-console.log('Language ',i18n.language)
 
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
+
   <React.StrictMode>
-    <App />
+    <Router>
+      <App />
+    </Router>
   </React.StrictMode>
 );
 
-document.getElementsByTagName('html')[0].setAttribute("dir", i18n.dir("fr"));
 
 
 // If you want to start measuring performance in your app, pass a function

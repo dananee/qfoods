@@ -15,7 +15,7 @@ function SearchBar({ searchChanges }) {
     }
 
     return (
-        <div className='inline-block my-10 mx-10 '>
+        <div className='inline-block my-10 mx-10 ' >
             <div className='bg-gray-200 outline outline-2 outline-gray-400  focus:outline-[#F86615] flex rounded-full h-11 max-w-[300px] items-center px-2 '>
                 <AiOutlineSearch className='text-gray-400 mx-3 my-4  text-4xl' />
                 <input

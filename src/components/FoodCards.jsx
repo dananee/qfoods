@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { data } from '../data/data.js';
 import { useTranslation } from 'react-i18next';
+import { Link } from 'react-router-dom';
+import { HashLink } from 'react-router-hash-link';
 
 
-const FoodCards = ({ category, search }) => {
+const FoodCards = ({ category, search}) => {
 
 
   const [foods, setFoods] = useState(data);
@@ -31,6 +33,7 @@ const FoodCards = ({ category, search }) => {
 
   }, [category, search]);
 
+  
 
   //   Filter by price
   // const filterPrice = (price) => {
@@ -127,26 +130,35 @@ const FoodCards = ({ category, search }) => {
       </div>
 
       {/* Display foods */}
-      <div className='grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4'>
+      <div  className='grid grid-cols-2 lg:grid-cols-4 gap-6 pt-4'>
         {foods.map((item, index) => (
+          
           <div
             key={index}
             className='border cursor-pointer shadow-lg rounded-lg hover:scale-105 duration-300'
           >
+            <HashLink key={index} to={`/meal/${index}/#content`}  state={{meal:item}}>
             <img
               src={item.image}
               alt={item.name}
               className='w-full h-[200px] object-cover rounded-t-lg'
             />
-            <div className='flex justify-between px-2 py-4'>
-              <p className='font-bold'>{t(item.name)}</p>
+            <div className='flex flex-col md:flex-row  justify-between px-2 py-4'>
+              <div>
+              <p className='font-bold truncate '>{t(item.name)}</p>
+            <p className='text-gray-400  capitalize font-bold'>{t(item.category)}</p>
+              </div>
               <p>
-                <span className='bg-orange-500 text-white p-1 rounded-full'>
+                <span className='bg-orange-500 px-2 mb-2 mx-5 truncate text-white p-1 rounded-full'>
                   {item.price}
                 </span>
               </p>
+             
             </div>
+            </HashLink>
+               
           </div>
+        
         ))}
       </div>
     </div>

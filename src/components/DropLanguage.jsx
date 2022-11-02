@@ -7,10 +7,9 @@ import { MdLanguage } from 'react-icons/md';
 function DropLanguage() {
 
     // Translate
-    const {i18n} = useTranslation();
+    const { i18n } = useTranslation();
 
-    const [setMenu] = useState(false);
-
+    const [menu, setMenu] = useState(false);
 
     // Avaible Lang choose
     const languages = [{
@@ -34,13 +33,13 @@ function DropLanguage() {
     function setPageDirection(language) {
 
         i18n.changeLanguage(language);
-
+        console.log(language);
         document.documentElement.dir = i18n.dir(language);
     }
 
     // Selected Language on DropMenu
     const [selectedLang, setSelectedLang] = useState(languages[1])
-
+     
     return (
         <Listbox value={selectedLang} onChange={setSelectedLang} as="div" className="cursor-pointer relative border 
                          inline-block bg-transparent hover:bg-gray-900 hover:text-white ltr:mr-3 rtl:ml-3 rtl:md:ml-10 rounded-lg ltr:md:mr-10">
@@ -57,10 +56,11 @@ function DropLanguage() {
                             setPageDirection(language.lang);
                             setMenu(false)
                         }}
-                         key={language.lang} as={"div"}>
+                            key={language.lang} as={"div"}>
                             {({ active }) => (
-                                <button 
-                                    className={`truncate relative uppercase w-full px-10 py-3 ${active ? "bg-gray-900  text-white" : " text-gray-900"}`}>
+                                <button
+                                    className={`truncate relative uppercase w-full px-10 py-3
+                                     ${active ? "bg-gray-900  text-white" : " text-gray-900"}`}>
                                     {language.flag} {language.title} - {language.currency}</button>
                             )}
                         </Listbox.Option>

@@ -1,16 +1,20 @@
 import React from "react";
-import Header from "./components/Header";
-import BottomNav from "./components/BottomNav";
-import MainSection from "./components/MainSection";
-
-
+import Home from "./components/Home";
+import DetailFood from "./components/DetailFood"
+import { Routes, Route } from "react-router";
+import CartDrawer from "./components/CartDrawer";
 
 function App() {
+
   return (
     <div className="App flex flex-col h-screen">
-      <Header />
-      <MainSection />
-      <BottomNav />
+      <Routes>
+        <Route exact path="/" element={<Home />} />
+       
+        <Route path="/meal" element={<DetailFood />} />
+        <Route path="/meal/:id" element={<DetailFood />} />
+        <Route path="/shooping" element={ <CartDrawer />} />
+      </Routes>
     </div>
   );
 
